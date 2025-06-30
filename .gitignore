@@ -1,0 +1,4 @@
+*/spec-env
+__pycache__/
+*/.gradio
+/spec-env
