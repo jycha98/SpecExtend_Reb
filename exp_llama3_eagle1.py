@@ -160,6 +160,7 @@ for length in sorted_lengths[args.start_length_id:]:
     else:
         records = file_to_data[length]
 
+    print(colored(f'dataset: {dataset}, length: {length}','magenta'))
     if dataset == "govreport" and length == 1024:
         del records[6]
 
