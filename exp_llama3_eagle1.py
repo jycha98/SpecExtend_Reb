@@ -163,7 +163,8 @@ for length in sorted_lengths[args.start_length_id:]:
     print(colored(f'dataset: {dataset}, length: {length}','magenta'))
     if dataset == "govreport" and length == 2048:
         del records[6]
-
+        print(colored(f'deleted! len(records): {len(records)}','magenta'))
+        
     # Warmup
     print(colored("Warming up GPUs...", "yellow"))
     for rec in records[:1]:
