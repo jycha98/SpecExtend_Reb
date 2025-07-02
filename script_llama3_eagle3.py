@@ -2,6 +2,8 @@ from eagle_3.model_eagle import EaModel
 from run_classic import load_texts_from_jsonl
 from accelerate import Accelerator
 from termcolor import colored
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # mappings from run_classic.py:
 BASE_MODEL_MAP = {

@@ -7,6 +7,9 @@ from termcolor import colored
 from accelerate import Accelerator
 from eagle.model_eagle import EaModel_L3 as EaModel
 import torch
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 
 # ─── CONFIGS ────────────────────────────────────────────────────────────────────
 
