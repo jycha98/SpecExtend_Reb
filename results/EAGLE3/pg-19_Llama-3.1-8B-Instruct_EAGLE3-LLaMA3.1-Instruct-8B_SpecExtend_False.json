@@ -1,0 +1,47 @@
+{
+  "exp_config": {
+    "exp_name": "pg-19_Llama-3.1-8B-Instruct_EAGLE3-LLaMA3.1-Instruct-8B_SpecExtend_False",
+    "dataset": "pg-19",
+    "target_model": "Llama-3.1-8B-Instruct",
+    "draft_model": "EAGLE3-LLaMA3.1-Instruct-8B",
+    "use_specextend": false,
+    "cache_parameters": null
+  },
+  "results": {
+    "1024": {
+      "avg_accept_length": 1.493,
+      "tokens_per_sec": 84.454,
+      "total_generated": 10320,
+      "total_inference_time": 122.197,
+      "num_runs": 40
+    },
+    "2048": {
+      "avg_accept_length": 1.636,
+      "tokens_per_sec": 78.779,
+      "total_generated": 10326,
+      "total_inference_time": 131.076,
+      "num_runs": 40
+    },
+    "4096": {
+      "avg_accept_length": 0.736,
+      "tokens_per_sec": 44.798,
+      "total_generated": 10300,
+      "total_inference_time": 229.922,
+      "num_runs": 40
+    },
+    "8192": {
+      "avg_accept_length": 0.533,
+      "tokens_per_sec": 28.946,
+      "total_generated": 10292,
+      "total_inference_time": 355.561,
+      "num_runs": 40
+    },
+    "16000": {
+      "avg_accept_length": 0.464,
+      "tokens_per_sec": 18.802,
+      "total_generated": 10290,
+      "total_inference_time": 547.281,
+      "num_runs": 40
+    }
+  }
+}

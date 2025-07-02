@@ -1,0 +1,47 @@
+{
+  "exp_config": {
+    "exp_name": "govreport_Llama-3.1-8B-Instruct_EAGLE3-LLaMA3.1-Instruct-8B_SpecExtend_False",
+    "dataset": "govreport",
+    "target_model": "Llama-3.1-8B-Instruct",
+    "draft_model": "EAGLE3-LLaMA3.1-Instruct-8B",
+    "use_specextend": false,
+    "cache_parameters": null
+  },
+  "results": {
+    "1024": {
+      "avg_accept_length": 2.198,
+      "tokens_per_sec": 104.356,
+      "total_generated": 10320,
+      "total_inference_time": 98.892,
+      "num_runs": 40
+    },
+    "2048": {
+      "avg_accept_length": 2.136,
+      "tokens_per_sec": 90.741,
+      "total_generated": 10362,
+      "total_inference_time": 114.193,
+      "num_runs": 40
+    },
+    "4096": {
+      "avg_accept_length": 0.854,
+      "tokens_per_sec": 47.759,
+      "total_generated": 10314,
+      "total_inference_time": 215.961,
+      "num_runs": 40
+    },
+    "8192": {
+      "avg_accept_length": 0.607,
+      "tokens_per_sec": 30.68,
+      "total_generated": 10300,
+      "total_inference_time": 335.728,
+      "num_runs": 40
+    },
+    "16384": {
+      "avg_accept_length": 0.495,
+      "tokens_per_sec": 18.688,
+      "total_generated": 10292,
+      "total_inference_time": 550.727,
+      "num_runs": 40
+    }
+  }
+}
