@@ -18,7 +18,7 @@ DRAFT_MODEL_MAP = {
 # ────────────────────────────────────────────────────────────────────────────
 # 1) ─── USER-CONFIGURE THESE ────────────────────────────────────────────────
 INPUT_FILE        = "data/govreport/govreport_2K.jsonl"
-MAX_SAMPLES       = 1
+MAX_SAMPLES       = 20
 MODEL_NAME        = "llama3.1"  
 # MODEL_NAME        = "vicuna_7b"   
 MAX_GEN_LEN       = 256
@@ -42,41 +42,46 @@ tokenizer = model.tokenizer
 accelerator = Accelerator()
 model, tokenizer = accelerator.prepare(model, tokenizer)
 # no warmup step
-
+from tqdm import tqdm
 # inference loop
-text = texts[0]
-input_ids = tokenizer.encode(text, return_tensors="pt", add_special_tokens=True)
-input_ids = input_ids.to(accelerator.device)
+# 6,8, 11
+for id, text in enumerate(texts):
+# text = texts[7]
+    input_ids = tokenizer.encode(text, return_tensors="pt", add_special_tokens=True)
+    input_ids = input_ids.to(accelerator.device)
 
-USE_SPECEXTEND    = True
-VERBOSE           = True
-OUTPUT_RESULT_LINE= True
+    print(colored(f'{id}: {input_ids.shape}', 'yellow'))
 
-print('Warming up GPUs...')
-for i in range(3):
-    out = model.eagenerate(
-        input_ids,
-        temperature         = 0,
-        max_new_tokens      = 3,
-        output_result_line  = False,
-        verbose             = False,
-        use_specextend      = USE_SPECEXTEND,
-        retrieval_chunk_size= 32,
-        retrieve_top_k      = 64,
-        retrieve_every_n_steps= 4,
-        retrieval_verbose   = False
-    )
-print('Warmup complete!')
+    
+    # USE_SPECEXTEND    = True
+    # VERBOSE           = True
+    # OUTPUT_RESULT_LINE= True
 
-out = model.eagenerate(
-    input_ids,
-    temperature         = 0,
-    max_new_tokens      = MAX_GEN_LEN,
-    output_result_line  = OUTPUT_RESULT_LINE,
-    verbose             = VERBOSE,
-    use_specextend      = True,
-    retrieval_chunk_size= 32,
-    retrieve_top_k      = 64,
-    retrieve_every_n_steps= 4,
-    retrieval_verbose   = False
-)
+    # # print('Warming up GPUs...')
+    # # for i in range(3):
+    # #     out = model.eagenerate(
+    # #         input_ids,
+    # #         temperature         = 0,
+    # #         max_new_tokens      = 3,
+    # #         output_result_line  = False,
+    # #         verbose             = False,
+    # #         use_specextend      = USE_SPECEXTEND,
+    # #         retrieval_chunk_size= 32,
+    # #         retrieve_top_k      = 64,
+    # #         retrieve_every_n_steps= 4,
+    # #         retrieval_verbose   = False
+    # #     )
+    # # print('Warmup complete!')
+
+    # out = model.eagenerate(
+    #     input_ids,
+    #     temperature         = 0,
+    #     max_new_tokens      = 3,
+    #     output_result_line  = OUTPUT_RESULT_LINE,
+    #     verbose             = VERBOSE,
+    #     use_specextend      = True,
+    #     retrieval_chunk_size= 32,
+    #     retrieve_top_k      = 64,
+    #     retrieve_every_n_steps= 4,
+    #     retrieval_verbose   = False
+    # )
