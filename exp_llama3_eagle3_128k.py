@@ -32,7 +32,7 @@ args = parser.parse_args()
 
 # ─── LOAD DATA ──────────────────────────────────────────────────────────────────
 
-data_folder = os.path.join("data", args.dataset_name)
+data_folder = os.path.join("data", 'pg-19-long')
 file_to_data = {}
 n = 20
 for fname in os.listdir(data_folder):
@@ -52,7 +52,7 @@ for fname in os.listdir(data_folder):
                 continue
             records.append(rec)
     if records:
-        length = records[-1]["trunc_length"]
+        length = records[-1]["truncated_length"]
         file_to_data[length] = records
 
 # ─── MODEL SETUP ────────────────────────────────────────────────────────────────
