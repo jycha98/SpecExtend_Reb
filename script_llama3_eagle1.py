@@ -4,6 +4,7 @@ from eagle.model_eagle import EaModel_L3
 from run_classic import load_texts_from_jsonl
 from accelerate import Accelerator
 from termcolor import colored
+import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
