@@ -144,7 +144,7 @@ while os.path.exists(out_path):
 
 summary = {}
 sorted_lengths = sorted(file_to_data.keys())
-for length in sorted_lengths[1:]:
+for length in sorted_lengths:
     # collect over all runs for this length
     acc_accept_length = []
     acc_total_generated = 0
