@@ -29,6 +29,7 @@ parser.add_argument("--dataset_name", type=str, required=True, choices=DATASETS)
 parser.add_argument("--model_name",   type=str, default="llama3.1")
 parser.add_argument("--output_folder", type=str, default="default")
 parser.add_argument("--use_specextend", action="store_true")
+parser.add_argument("--start_length_id", type=int, default=0)
 args = parser.parse_args()
 
 # ─── LOAD DATA ──────────────────────────────────────────────────────────────────
@@ -147,17 +148,20 @@ while os.path.exists(out_path):
 
 summary = {}
 sorted_lengths = sorted(file_to_data.keys())
-for length in sorted_lengths:
+for length in sorted_lengths[args.start_length_id:]:
     # collect over all runs for this length
     acc_accept_length = []
     acc_total_generated = 0
     acc_total_time      = 0.0
 
     # skip front few GovReport samples if too long
-    if dataset == "GovReport" and length > 10000:
+    if dataset == "govreport" and length > 10000:
         records = file_to_data[length][4:]
     else:
         records = file_to_data[length]
+
+    if dataset == "govreport" and length == 1024:
+        del records[6]
 
     # Warmup
     print(colored("Warming up GPUs...", "yellow"))
