@@ -2,19 +2,20 @@ import json
 import torch
 import torch.nn as nn
 from transformers import AutoConfig
-from shared.modeling_llama_kv_target import LlamaForCausalLM as KVLlamaForCausalLM
-from shared.modeling_llama_kv_target_3 import LlamaForCausalLM as KVLlamaForCausalLM_3
-from eagle.utils_eagle import *
+# from shared.modeling_llama_kv_target import LlamaForCausalLM as KVLlamaForCausalLM
+# from shared.modeling_llama_kv_target_3 import LlamaForCausalLM as KVLlamaForCausalLM
+from eagle_3_final.modeling_llama_kv_target_3_e3 import LlamaForCausalLM as KVLlamaForCausalLM
+from eagle_3_final.utils_eagle import *
 from shared.kv_cache import initialize_past_key_values
 from transformers import AutoTokenizer
 import os 
 from huggingface_hub import hf_hub_download
-from eagle.cnets import Model
-from eagle.configs_eagle import EConfig
+from eagle_3_final.cnets import Model
+from eagle_3_final.configs_eagle import EConfig
 from huggingface_hub import hf_hub_download
 from termcolor import colored
 from datetime import datetime
-
+ 
 def tensor_size_bytes(tensor):
     return tensor.element_size() * tensor.nelement()
 
@@ -32,6 +33,7 @@ class EaModel(nn.Module):
             base_model,
             base_model_name_or_path,
             ea_model_path,
+            ea_layer_state_dict=None
     ):
 
         super().__init__()
@@ -41,6 +43,7 @@ class EaModel(nn.Module):
         self.vocab_size = base_model.lm_head.weight.shape[0]
         self.base_model_name_or_path = base_model_name_or_path
         self.tokenizer = AutoTokenizer.from_pretrained(self.base_model_name_or_path)
+        
         config = EConfig.from_pretrained(ea_model_path)
         with open(ea_model_path,"r") as f:
             con=json.loads(f.read())
@@ -48,7 +51,8 @@ class EaModel(nn.Module):
             bias=con["bias"]
         except:
             bias=True
-        self.ea_layer = Model(config,bias=bias)
+
+        self.ea_layer = Model(config, bias=bias, path=base_model_name_or_path, load_emb=True)
 
         low_memory=False
 
@@ -56,15 +60,18 @@ class EaModel(nn.Module):
         if device!=base_model.lm_head.weight.device:
             self.ea_layer.diff_device = True
             if not low_memory:
-                # self.ea_layer.head=nn.Linear(base_model.lm_head.in_features,base_model.lm_head.out_features,bias=False)
-                # self.ea_layer.head.weight=copy.deepcopy(base_model.lm_head.weight)
-                # self.ea_layer.head.to(device)
                 self.ea_layer.headweight = base_model.lm_head.weight.clone().to(device)
             else:
                 self.ea_layer.layer_device = device
 
         else:
             self.ea_layer.diff_device = False
+            
+        if config.vocab_size==config.draft_vocab_size:
+            del self.ea_layer.d2t,self.ea_layer.t2d
+            
+        load_=self.ea_layer.load_state_dict(ea_layer_state_dict, strict=False)
+            
         self.ea_layer.to(self.base_model.dtype).to(device)
         self.ea_layer.tokenizer = self.tokenizer
 
@@ -82,35 +89,39 @@ class EaModel(nn.Module):
             Type="LLaMA",
             base_model_path=None,
             ea_model_path=None,
-            is_llama3=False,
             **kwargs,
     ):
         #assert Type=="LLaMA"
         Type=AutoConfig.from_pretrained(base_model_path).architectures[0]
         if Type=='LlamaForCausalLM':
-            if is_llama3:
-                base_model = KVLlamaForCausalLM_3.from_pretrained(
-                    base_model_path, **kwargs
-                )
-            else:
-                base_model = KVLlamaForCausalLM.from_pretrained(
-                    base_model_path, **kwargs
-                )
+            base_model = KVLlamaForCausalLM.from_pretrained(
+                base_model_path, **kwargs
+            )
     
         configpath=os.path.join(ea_model_path,"config.json")
         if not os.path.exists(configpath):
             configpath = hf_hub_download(ea_model_path, "config.json")
+        
+        try:
+            load_model_path = os.path.join(ea_model_path, "pytorch_model.bin")
+            if not os.path.exists(load_model_path):
+                load_model_path = hf_hub_download(ea_model_path, "pytorch_model.bin")
+            ea_layer_state_dict = torch.load(load_model_path,
+                                             map_location=base_model.device)
+        except:
+            from safetensors.torch import load_file
+            load_model_path = os.path.join(ea_model_path, "model.safetensors")
+            if not os.path.exists(load_model_path):
+                load_model_path = hf_hub_download(ea_model_path, "model.safetensors")
+            ea_layer_state_dict = load_file(load_model_path)
+        
         model = cls(
             base_model,
             base_model_path,
-            configpath
+            configpath,
+            ea_layer_state_dict=ea_layer_state_dict
         )
-        load_model_path=os.path.join(ea_model_path, "pytorch_model.bin")
-        if not os.path.exists(load_model_path):
-            load_model_path=hf_hub_download(ea_model_path, "pytorch_model.bin")
-        ea_layer_state_dict = torch.load(load_model_path,
-                                         map_location=base_model.device)
-        model.ea_layer.load_state_dict(ea_layer_state_dict, strict=True)
+        
         model.ea_layer.device = model.ea_layer.embed_tokens.weight.device
         model.ea_layer.base_config = model.config
 
@@ -168,10 +179,13 @@ class EaModel(nn.Module):
             input_ids = torch.cat((input_ids, token.to(input_ids.device)), dim=1)
             # Clone the output hidden states
 
+            hidden_states=torch.cat(outputs["hidden_states"],dim=-1)
+
+            print(colored(f'\nhidden_states:{hidden_states.shape}\n', 'magenta'))
+
             input_ids,position_ids,tree_attention_mask,parent = self.ea_layer.topK_genrate(hidden_states, input_ids, self.base_model.lm_head, nodes=nodes,threshold=threshold,max_depth=max_depth)
             return input_ids,position_ids,tree_attention_mask,token,parent
         else:
-
             return outputs, orig, hidden_states
 
     @torch.no_grad()
@@ -249,7 +263,6 @@ class EaModel(nn.Module):
 
         start_time = datetime.now()
         
-        
         draft_input_ids,draft_position_ids,tree_attention_mask,last_token,parent=self(input_ids, past_key_values=past_key_values, output_orig=True, nodes=nodes, threshold=threshold, max_depth=max_depth,logits_processor=logits_processor)
 
         draft_input_ids=torch.cat([last_token,draft_input_ids],dim=-1)
@@ -257,7 +270,6 @@ class EaModel(nn.Module):
         tree_attention_mask=torch.cat([torch.zeros(1,tree_attention_mask.size(1),dtype=tree_attention_mask.dtype,device=tree_attention_mask.device),tree_attention_mask],dim=0)
         tree_attention_mask = torch.cat([torch.ones(tree_attention_mask.size(0), 1,dtype=tree_attention_mask.dtype,device=tree_attention_mask.device), tree_attention_mask],
                                         dim=1)
-        
         
         new_token = 0
         total_tokens_list = []
@@ -349,8 +361,9 @@ class EaModel(nn.Module):
 
         # full cache: shape: [layers, batch_size, num_heads, full_cache_budget, head_dim]
         self.ea_layer.full_draft_kv = []
+        print(colored(f'num_hidden_layers: {num_hidden_layers}','yellow'))
         for layer_idx in range(num_hidden_layers):
-            device = self.ea_layer.layers[layer_idx].self_attn.q_proj.weight.device
+            device = self.ea_layer.midlayer.self_attn.q_proj.weight.device
             full_K = torch.zeros(
                 [1, num_kv_heads, self.ea_layer.full_cache_budget, head_dim],
                 dtype=torch.bfloat16,

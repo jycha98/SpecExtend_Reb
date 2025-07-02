@@ -34,7 +34,8 @@ model = EaModel.from_pretrained(
         ea_model_path= draft_path,
         torch_dtype     = "auto",
         low_cpu_mem_usage=True,
-        device_map      = "auto"
+        device_map      = "auto",
+        is_llama3=True
         ).eval()
 
 tokenizer = model.tokenizer
