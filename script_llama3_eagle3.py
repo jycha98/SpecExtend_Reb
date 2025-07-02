@@ -16,7 +16,7 @@ DRAFT_MODEL_MAP = {
 }
 # ────────────────────────────────────────────────────────────────────────────
 # 1) ─── USER-CONFIGURE THESE ────────────────────────────────────────────────
-INPUT_FILE        = "data/govreport/govreport_2K.jsonl"
+INPUT_FILE        = "data/govreport/govreport_8K.jsonl"
 MAX_SAMPLES       = 1
 MODEL_NAME        = "llama3.1"   # one of: "vicuna_7b","longchat_7b","llama3.1"
 MAX_GEN_LEN       = 256
@@ -65,16 +65,64 @@ OUTPUT_RESULT_LINE= True
 #         retrieval_verbose   = False
 #     )
 # print('Warmup complete!')
+print(colored(f'\nchunk_size: {32}, retrieve_top_k: {32}\n','magenta'))
+for _ in range(3):
+    out = model.eagenerate(
+        input_ids,
+        temperature         = 0,
+        max_new_tokens      = MAX_GEN_LEN,
+        output_result_line  = True,
+        verbose             = VERBOSE,
+        use_specextend      = True,
+        retrieval_chunk_size= 32,
+        retrieve_top_k      = 32,
+        retrieve_every_n_steps= 4,
+        retrieval_verbose   = False
+    )
 
-out = model.eagenerate(
-    input_ids,
-    temperature         = 0,
-    max_new_tokens      = MAX_GEN_LEN,
-    output_result_line  = OUTPUT_RESULT_LINE,
-    verbose             = VERBOSE,
-    use_specextend      = True,
-    retrieval_chunk_size= 32,
-    retrieve_top_k      = 64,
-    retrieve_every_n_steps= 4,
-    retrieval_verbose   = False
-)
+print(colored(f'\nchunk_size: {32}, retrieve_top_k: {64}\n','magenta'))
+for _ in range(3):
+    out = model.eagenerate(
+        input_ids,
+        temperature         = 0,
+        max_new_tokens      = MAX_GEN_LEN,
+        output_result_line  = True,
+        verbose             = VERBOSE,
+        use_specextend      = True,
+        retrieval_chunk_size= 32,
+        retrieve_top_k      = 64,
+        retrieve_every_n_steps= 4,
+        retrieval_verbose   = False
+    )
+    
+print(colored(f'\nchunk_size: {32}, retrieve_top_k: {96}\n','magenta'))
+for _ in range(3):
+    out = model.eagenerate(
+        input_ids,
+        temperature         = 0,
+        max_new_tokens      = MAX_GEN_LEN,
+        output_result_line  = True,
+        verbose             = VERBOSE,
+        use_specextend      = True,
+        retrieval_chunk_size= 32,
+        retrieve_top_k      = 96,
+        retrieve_every_n_steps= 4,
+        retrieval_verbose   = False
+    )
+
+    
+print(colored(f'\nchunk_size: {32}, retrieve_top_k: {128}\n','magenta'))
+for _ in range(3):
+    out = model.eagenerate(
+        input_ids,
+        temperature         = 0,
+        max_new_tokens      = MAX_GEN_LEN,
+        output_result_line  = True,
+        verbose             = VERBOSE,
+        use_specextend      = True,
+        retrieval_chunk_size= 32,
+        retrieve_top_k      = 128,
+        retrieve_every_n_steps= 4,
+        retrieval_verbose   = False
+    )
+    
