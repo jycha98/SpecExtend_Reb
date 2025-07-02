@@ -1,4 +1,4 @@
-from eagle_3_final.model_eagle import EaModel
+from eagle_3.model_eagle import EaModel
 from run_classic import load_texts_from_jsonl
 from accelerate import Accelerator
 from termcolor import colored
