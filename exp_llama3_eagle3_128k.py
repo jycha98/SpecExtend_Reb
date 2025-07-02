@@ -123,17 +123,17 @@ while os.path.exists(out_path):
 
 summary = {}
 sorted_lengths = sorted(file_to_data.keys())
-for length in sorted_lengths[1:]:
+for length in sorted_lengths[-3:]:
     # collect over all runs for this length
     acc_accept_length = []
     acc_total_generated = 0
     acc_total_time      = 0.0
 
-    # skip front few GovReport samples if too long
-    if dataset == "GovReport" and length > 10000:
-        records = file_to_data[length][4:]
-    else:
-        records = file_to_data[length]
+    # # skip front few GovReport samples if too long
+    # if dataset == "GovReport" and length > 10000:
+    #     records = file_to_data[length][4:]
+    # else:
+    #     records = file_to_data[length]
 
     # Warmup
     print(colored("Warming up GPUs...", "yellow"))
