@@ -26,7 +26,7 @@ def total_kv_cache_size(past_key_values):
             total += tensor_size_bytes(kv.data)
     return total
 
-class EaModel(nn.Module):
+class EaModel_L3(nn.Module):
     def __init__(
             self,
             base_model,
@@ -82,21 +82,15 @@ class EaModel(nn.Module):
             Type="LLaMA",
             base_model_path=None,
             ea_model_path=None,
-            is_llama3=False,
             **kwargs,
     ):
         #assert Type=="LLaMA"
         Type=AutoConfig.from_pretrained(base_model_path).architectures[0]
         if Type=='LlamaForCausalLM':
-            if is_llama3:
-                base_model = KVLlamaForCausalLM_3.from_pretrained(
-                    base_model_path, **kwargs
-                )
-            else:
-                base_model = KVLlamaForCausalLM.from_pretrained(
-                    base_model_path, **kwargs
-                )
-    
+            base_model = KVLlamaForCausalLM_3.from_pretrained(
+                base_model_path, **kwargs
+            )
+
         configpath=os.path.join(ea_model_path,"config.json")
         if not os.path.exists(configpath):
             configpath = hf_hub_download(ea_model_path, "config.json")

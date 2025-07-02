@@ -4,14 +4,14 @@ import torch.nn as nn
 from transformers import AutoConfig
 # from shared.modeling_llama_kv_target import LlamaForCausalLM as KVLlamaForCausalLM
 # from shared.modeling_llama_kv_target_3 import LlamaForCausalLM as KVLlamaForCausalLM
-from eagle_3_final.modeling_llama_kv_target_3_e3 import LlamaForCausalLM as KVLlamaForCausalLM
-from eagle_3_final.utils_eagle import *
+from eagle_3.modeling_llama_kv_target_3_e3 import LlamaForCausalLM as KVLlamaForCausalLM
+from eagle_3.utils_eagle import *
 from shared.kv_cache import initialize_past_key_values
 from transformers import AutoTokenizer
 import os 
 from huggingface_hub import hf_hub_download
-from eagle_3_final.cnets import Model
-from eagle_3_final.configs_eagle import EConfig
+from eagle_3.cnets import Model
+from eagle_3.configs_eagle import EConfig
 from huggingface_hub import hf_hub_download
 from termcolor import colored
 from datetime import datetime
@@ -180,8 +180,6 @@ class EaModel(nn.Module):
             # Clone the output hidden states
 
             hidden_states=torch.cat(outputs["hidden_states"],dim=-1)
-
-            print(colored(f'\nhidden_states:{hidden_states.shape}\n', 'magenta'))
 
             input_ids,position_ids,tree_attention_mask,parent = self.ea_layer.topK_genrate(hidden_states, input_ids, self.base_model.lm_head, nodes=nodes,threshold=threshold,max_depth=max_depth)
             return input_ids,position_ids,tree_attention_mask,token,parent
@@ -361,7 +359,6 @@ class EaModel(nn.Module):
 
         # full cache: shape: [layers, batch_size, num_heads, full_cache_budget, head_dim]
         self.ea_layer.full_draft_kv = []
-        print(colored(f'num_hidden_layers: {num_hidden_layers}','yellow'))
         for layer_idx in range(num_hidden_layers):
             device = self.ea_layer.midlayer.self_attn.q_proj.weight.device
             full_K = torch.zeros(
