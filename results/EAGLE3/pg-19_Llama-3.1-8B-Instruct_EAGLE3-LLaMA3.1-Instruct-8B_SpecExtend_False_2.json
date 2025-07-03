@@ -1,0 +1,19 @@
+{
+  "exp_config": {
+    "exp_name": "pg-19_Llama-3.1-8B-Instruct_EAGLE3-LLaMA3.1-Instruct-8B_SpecExtend_False",
+    "dataset": "pg-19",
+    "target_model": "Llama-3.1-8B-Instruct",
+    "draft_model": "EAGLE3-LLaMA3.1-Instruct-8B",
+    "use_specextend": false,
+    "cache_parameters": null
+  },
+  "results": {
+    "4096": {
+      "avg_accept_length": 1.493,
+      "tokens_per_sec": 84.996,
+      "total_generated": 10320,
+      "total_inference_time": 121.417,
+      "num_runs": 40
+    }
+  }
+}

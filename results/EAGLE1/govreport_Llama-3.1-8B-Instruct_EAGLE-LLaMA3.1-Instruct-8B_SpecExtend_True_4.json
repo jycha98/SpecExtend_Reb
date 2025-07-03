@@ -1,0 +1,23 @@
+{
+  "exp_config": {
+    "exp_name": "govreport_Llama-3.1-8B-Instruct_EAGLE-LLaMA3.1-Instruct-8B_SpecExtend_True",
+    "dataset": "govreport",
+    "target_model": "Llama-3.1-8B-Instruct",
+    "draft_model": "EAGLE-LLaMA3.1-Instruct-8B",
+    "use_specextend": true,
+    "cache_parameters": {
+      "retrieval_chunk_size": 32,
+      "retrieve_top_k": 64,
+      "retrieve_every_n_steps": 4
+    }
+  },
+  "results": {
+    "4096": {
+      "avg_accept_length": 1.883,
+      "tokens_per_sec": 65.957,
+      "total_generated": 2068,
+      "total_inference_time": 31.354,
+      "num_runs": 8
+    }
+  }
+}
