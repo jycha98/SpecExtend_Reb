@@ -26,6 +26,7 @@ parser.add_argument("--dataset_name", type=str, required=True, choices=DATASETS)
 parser.add_argument("--model_name",   type=str, default="llama3.1")
 parser.add_argument("--output_folder", type=str, default="default")
 parser.add_argument("--use_specextend", action="store_true")
+parser.add_argument("--start_length_id", type=int, default=0)
 args = parser.parse_args()
 
 # ─── LOAD DATA ──────────────────────────────────────────────────────────────────
@@ -87,8 +88,7 @@ while os.path.exists(out_path):
 # ─── MAIN LOOP ─────────────────────────────────────────────────────────────────
 summary = {}
 sorted_lengths = sorted(file_to_data.keys())
-
-for length in sorted_lengths:
+for length in sorted_lengths[args.start_length_id:]:
     # select records (with GovReport skip logic unchanged)
     if dataset == "GovReport" and length > 10000:
         records = file_to_data[length][4:]
