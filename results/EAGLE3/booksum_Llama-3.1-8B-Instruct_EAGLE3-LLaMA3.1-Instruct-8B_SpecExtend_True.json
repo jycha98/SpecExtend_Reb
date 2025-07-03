@@ -1,0 +1,37 @@
+{
+  "exp_config": {
+    "exp_name": "booksum_Llama-3.1-8B-Instruct_EAGLE3-LLaMA3.1-Instruct-8B_SpecExtend_True",
+    "dataset": "booksum",
+    "target_model": "Llama-3.1-8B-Instruct",
+    "draft_model": "EAGLE3-LLaMA3.1-Instruct-8B",
+    "use_specextend": true,
+    "cache_parameters": {
+      "retrieval_chunk_size": 32,
+      "retrieve_top_k": 64,
+      "retrieve_every_n_steps": 4
+    }
+  },
+  "results": {
+    "1024": {
+      "avg_accept_length": 1.435,
+      "tokens_per_sec": 81.854,
+      "total_generated": 10306,
+      "total_inference_time": 125.907,
+      "num_runs": 40
+    },
+    "2048": {
+      "avg_accept_length": 1.5,
+      "tokens_per_sec": 73.977,
+      "total_generated": 10338,
+      "total_inference_time": 139.745,
+      "num_runs": 40
+    },
+    "4096": {
+      "avg_accept_length": 1.621,
+      "tokens_per_sec": 64.353,
+      "total_generated": 3097,
+      "total_inference_time": 48.125,
+      "num_runs": 12
+    }
+  }
+}
