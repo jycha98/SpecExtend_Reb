@@ -8,7 +8,8 @@ from tqdm.auto import tqdm
 from termcolor import colored
 from accelerate import Accelerator
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from llama4_43.modeling_llama import LlamaForCausalLM
+from transformers import AutoTokenizer
 
 # ─── ARGS ───────────────────────────────────────────────────────────────────────
 parser = argparse.ArgumentParser()
@@ -38,9 +39,9 @@ for fname in os.listdir(data_folder):
 
 # ─── MODEL SETUP ────────────────────────────────────────────────────────────────
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct", use_fast=False)
-model     = AutoModelForCausalLM.from_pretrained(
+model     = LlamaForCausalLM.from_pretrained(
     "meta-llama/Llama-3.1-8B-Instruct",
-    torch_dtype=torch.float16,
+    torch_dtype="auto",
     device_map="auto",
 )
 model.eval()
@@ -52,7 +53,7 @@ eos_id = tokenizer.eos_token_id
 max_new_tokens = 256
 
 # ─── EXPERIMENT METADATA ────────────────────────────────────────────────────────
-exp_base = f"{args.dataset_name}_llama3.1_ar"
+exp_base = f"{args.dataset_name}_llama3.1_ar_443"
 out_dir  = os.path.join("results", "AR_baseline")
 os.makedirs(out_dir, exist_ok=True)
 out_path = os.path.join(out_dir, f"{exp_base}.json")
