@@ -50,6 +50,7 @@ python exp_llama3_ar_4_43.py --dataset_name govreport
 python exp_llama3_ar_4_43.py --dataset_name pg-19
 python exp_llama3_ar_4_43.py --dataset_name booksum
 pip install transformers -U
+pip install accelerate
 python exp_llama3_ar.py --dataset_name govreport
 python exp_llama3_ar.py --dataset_name pg-19
 python exp_llama3_ar.py --dataset_name booksum
