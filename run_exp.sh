@@ -41,6 +41,6 @@ set -uo pipefail
 # python exp_llama3_eagle3_final.py --dataset_name booksum --use_specextend --start_length_id 5
 
 # ### Llama 3.1 + EAGLE-3, 128K
-python exp_llama3_eagle3_128k_final.py --dataset_name pg-19
-python exp_llama3_eagle3_128k_final.py --dataset_name pg-19 --start_length_id 1
-python exp_llama3_eagle3_128k_final.py --dataset_name pg-19 --start_length_id 2
+python exp_llama3_eagle3_128k_final.py --dataset_name pg-19 --use_specextend
+python exp_llama3_eagle3_128k_final.py --dataset_name pg-19 --use_specextend --start_length_id 1
+python exp_llama3_eagle3_128k_final.py --dataset_name pg-19 --use_specextend --start_length_id 2
