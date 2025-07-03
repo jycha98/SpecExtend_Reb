@@ -17,7 +17,7 @@ parser.add_argument("--dataset_name",   type=str, required=True, choices=["books
 args = parser.parse_args()
 
 # ─── LOAD DATA ──────────────────────────────────────────────────────────────────
-data_folder = os.path.join("data", args.dataset_name)
+data_folder = os.path.join("data", 'pg-19-long')
 file_to_data = {}
 N_PER_FILE = 20
 for fname in os.listdir(data_folder):
@@ -70,7 +70,7 @@ for length in lengths:
     acc_times = []
 
     # for each sample run 2 replicates
-    for rec in tqdm(recs, desc=f"Len={length}"):
+    for rec in tqdm(recs[:3], desc=f"Len={length}"):
         prompt_ids = tokenizer(rec["text"], return_tensors="pt").input_ids.to(accelerator.device)
 
         for run in range(2):

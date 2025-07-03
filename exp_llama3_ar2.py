@@ -53,7 +53,7 @@ max_new_tokens = 256
 
 # ─── EXPERIMENT METADATA ────────────────────────────────────────────────────────
 exp_base = f"{args.dataset_name}_llama3.1_ar"
-out_dir  = os.path.join("results", "pg-19-long")
+out_dir  = os.path.join("results", args.dataset_name)
 os.makedirs(out_dir, exist_ok=True)
 out_path = os.path.join(out_dir, f"{exp_base}.json")
 
