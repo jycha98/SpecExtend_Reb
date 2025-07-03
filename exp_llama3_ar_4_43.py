@@ -34,7 +34,7 @@ for fname in os.listdir(data_folder):
                 continue
             recs.append(rec)
     if recs:
-        length = recs[-1]["trunc_length"]
+        length = recs[-1]["truncated_length"]
         file_to_data[length] = recs
 
 # ─── MODEL SETUP ────────────────────────────────────────────────────────────────

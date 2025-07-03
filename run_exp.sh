@@ -56,8 +56,8 @@ set -uo pipefail
 # python exp_llama3_eagle1_128k_final.py --dataset_name pg-19
 # pip install accelerate -U
 # pip install transformers - U
-python exp_llama3_ar2.py --dataset_name govreport
-python exp_llama3_ar.py --dataset_name govreport
-pip install accelerate==0.21.0
-pip install transformers==4.43.0
+# python exp_llama3_ar2.py --dataset_name govreport
+# python exp_llama3_ar.py --dataset_name govreport
+# pip install accelerate==0.21.0
+# pip install transformers==4.43.0
 python exp_llama3_ar_4_43.py --dataset_name govreport
