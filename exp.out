@@ -1,482 +1,312 @@
 nohup: ignoring input
-Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.39it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.39it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.41it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.95it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.70it/s]
-/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py:109: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.35it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.38it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.41it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.70it/s]
+/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py:105: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
   ea_layer_state_dict = torch.load(load_model_path,
 Warming up GPUs...
 Warmup complete!
-len=32768:   0%|                                                                                   | 0/20 [00:00<?, ?it/s]W0703 18:49:20.733000 137312902006592 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
-W0703 18:49:20.733000 137312902006592 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
-W0703 18:49:20.733000 137312902006592 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
-W0703 18:49:20.733000 137312902006592 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
-W0703 18:49:20.733000 137312902006592 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
-len=32768:   5%|███▊                                                                       | 1/20 [00:26<08:21, 26.39s/it]len=32768:  10%|███████▌                                                                   | 2/20 [00:51<07:40, 25.58s/it]len=32768:  15%|███████████▎                                                               | 3/20 [01:15<07:03, 24.93s/it]len=32768:  20%|███████████████                                                            | 4/20 [01:39<06:31, 24.44s/it]len=32768:  25%|██████████████████▊                                                        | 5/20 [02:02<06:01, 24.08s/it]len=32768:  30%|██████████████████████▌                                                    | 6/20 [02:26<05:35, 23.96s/it]len=32768:  35%|██████████████████████████▎                                                | 7/20 [02:50<05:11, 23.95s/it]len=32768:  40%|██████████████████████████████                                             | 8/20 [03:13<04:43, 23.61s/it]len=32768:  45%|█████████████████████████████████▊                                         | 9/20 [03:38<04:24, 24.07s/it]len=32768:  50%|█████████████████████████████████████                                     | 10/20 [04:02<04:00, 24.01s/it]len=32768:  55%|████████████████████████████████████████▋                                 | 11/20 [04:27<03:38, 24.29s/it]len=32768:  60%|████████████████████████████████████████████▍                             | 12/20 [04:49<03:10, 23.77s/it]len=32768:  65%|████████████████████████████████████████████████                          | 13/20 [05:14<02:49, 24.23s/it]len=32768:  70%|███████████████████████████████████████████████████▊                      | 14/20 [05:37<02:22, 23.80s/it]len=32768:  75%|███████████████████████████████████████████████████████▌                  | 15/20 [06:00<01:57, 23.55s/it]len=32768:  80%|███████████████████████████████████████████████████████████▏              | 16/20 [06:25<01:35, 23.77s/it]len=32768:  85%|██████████████████████████████████████████████████████████████▉           | 17/20 [06:49<01:12, 24.08s/it]len=32768:  90%|██████████████████████████████████████████████████████████████████▌       | 18/20 [07:12<00:47, 23.65s/it]len=32768:  95%|██████████████████████████████████████████████████████████████████████▎   | 19/20 [07:36<00:23, 23.83s/it]len=32768: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:59<00:00, 23.59s/it]len=32768: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:59<00:00, 23.99s/it]
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [68,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [14,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+len=32768:   0%|                                                                                   | 0/20 [00:00<?, ?it/s]W0703 19:37:16.033000 132004948870976 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
+W0703 19:37:16.033000 132004948870976 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
+W0703 19:37:16.033000 132004948870976 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
+W0703 19:37:16.033000 132004948870976 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0703 19:37:16.033000 132004948870976 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+len=32768:   5%|███▊                                                                       | 1/20 [00:26<08:25, 26.63s/it]len=32768:  10%|███████▌                                                                   | 2/20 [00:51<07:36, 25.35s/it]len=32768:  15%|███████████▎                                                               | 3/20 [01:13<06:46, 23.91s/it]len=32768:  20%|███████████████                                                            | 4/20 [01:36<06:16, 23.52s/it]len=32768:  25%|██████████████████▊                                                        | 5/20 [01:59<05:51, 23.44s/it]len=32768:  30%|██████████████████████▌                                                    | 6/20 [02:21<05:20, 22.86s/it]len=32768:  35%|██████████████████████████▎                                                | 7/20 [02:45<05:05, 23.46s/it]len=32768:  40%|██████████████████████████████                                             | 8/20 [03:09<04:43, 23.63s/it]len=32768:  45%|█████████████████████████████████▊                                         | 9/20 [03:33<04:18, 23.48s/it]len=32768:  50%|█████████████████████████████████████                                     | 10/20 [03:57<03:56, 23.68s/it]len=32768:  55%|████████████████████████████████████████▋                                 | 11/20 [04:22<03:37, 24.18s/it]len=32768:  60%|████████████████████████████████████████████▍                             | 12/20 [04:46<03:14, 24.25s/it]len=32768:  65%|████████████████████████████████████████████████                          | 13/20 [05:10<02:48, 24.00s/it]len=32768:  70%|███████████████████████████████████████████████████▊                      | 14/20 [05:33<02:22, 23.76s/it]len=32768:  75%|███████████████████████████████████████████████████████▌                  | 15/20 [05:58<02:00, 24.11s/it]len=32768:  80%|███████████████████████████████████████████████████████████▏              | 16/20 [06:20<01:34, 23.51s/it]len=32768:  85%|██████████████████████████████████████████████████████████████▉           | 17/20 [06:44<01:10, 23.66s/it]len=32768:  90%|██████████████████████████████████████████████████████████████████▌       | 18/20 [07:07<00:46, 23.44s/it]len=32768:  95%|██████████████████████████████████████████████████████████████████████▎   | 19/20 [07:28<00:22, 22.80s/it]len=32768: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:51<00:00, 22.86s/it]len=32768: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:51<00:00, 23.59s/it]
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [132,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [24,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [80,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
 
-Generated 258 tokens in 14.66s. 
-Token/sec: 17.6
-Average acceptance length: 1.481
+Generated 258 tokens in 13.79s. 
+Token/sec: 18.71
+Average acceptance length: 1.529
+
+Generated 258 tokens in 12.76s. 
+Token/sec: 20.22
+Average acceptance length: 1.529
+
+Generated 257 tokens in 11.49s. 
+Token/sec: 22.37
+Average acceptance length: 1.495
+
+Generated 257 tokens in 12.89s. 
+Token/sec: 19.94
+Average acceptance length: 1.495
+
+Generated 257 tokens in 11.06s. 
+Token/sec: 23.24
+Average acceptance length: 1.734
+
+Generated 257 tokens in 11.07s. 
+Token/sec: 23.21
+Average acceptance length: 1.734
+
+Generated 258 tokens in 12.10s. 
+Token/sec: 21.33
+Average acceptance length: 1.867
+
+Generated 258 tokens in 10.74s. 
+Token/sec: 24.03
+Average acceptance length: 1.867
+
+Generated 260 tokens in 10.94s. 
+Token/sec: 23.76
+Average acceptance length: 1.796
+
+Generated 260 tokens in 12.29s. 
+Token/sec: 21.16
+Average acceptance length: 1.796
+
+Generated 257 tokens in 10.83s. 
+Token/sec: 23.74
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.83s. 
+Token/sec: 23.73
+Average acceptance length: 1.856
+
+Generated 257 tokens in 12.95s. 
+Token/sec: 19.84
+Average acceptance length: 1.520
 
 Generated 257 tokens in 11.66s. 
 Token/sec: 22.04
-Average acceptance length: 1.402
-
-Generated 257 tokens in 13.14s. 
-Token/sec: 19.56
-Average acceptance length: 1.380
-
-Generated 257 tokens in 11.80s. 
-Token/sec: 21.78
-Average acceptance length: 1.380
-
-Generated 258 tokens in 12.71s. 
-Token/sec: 20.3
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.37s. 
-Token/sec: 22.69
-Average acceptance length: 1.554
-
-Generated 261 tokens in 11.12s. 
-Token/sec: 23.47
-Average acceptance length: 1.691
-
-Generated 261 tokens in 12.49s. 
-Token/sec: 20.89
-Average acceptance length: 1.691
-
-Generated 257 tokens in 11.70s. 
-Token/sec: 21.96
-Average acceptance length: 1.448
-
-Generated 257 tokens in 11.66s. 
-Token/sec: 22.04
-Average acceptance length: 1.448
-
-Generated 259 tokens in 12.49s. 
-Token/sec: 20.73
-Average acceptance length: 1.670
-
-Generated 259 tokens in 11.13s. 
-Token/sec: 23.26
-Average acceptance length: 1.670
-
-Generated 257 tokens in 11.26s. 
-Token/sec: 22.83
-Average acceptance length: 1.596
-
-Generated 257 tokens in 12.60s. 
-Token/sec: 20.39
-Average acceptance length: 1.596
-
-Generated 258 tokens in 11.41s. 
-Token/sec: 22.61
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.39s. 
-Token/sec: 22.65
-Average acceptance length: 1.554
-
-Generated 258 tokens in 13.17s. 
-Token/sec: 19.59
-Average acceptance length: 1.389
-
-Generated 258 tokens in 11.83s. 
-Token/sec: 21.81
-Average acceptance length: 1.389
-
-Generated 258 tokens in 11.22s. 
-Token/sec: 22.99
-Average acceptance length: 1.606
-
-Generated 258 tokens in 12.57s. 
-Token/sec: 20.53
-Average acceptance length: 1.606
-
-Generated 257 tokens in 11.74s. 
-Token/sec: 21.88
-Average acceptance length: 1.402
-
-Generated 257 tokens in 13.09s. 
-Token/sec: 19.63
-Average acceptance length: 1.402
-
-Generated 258 tokens in 11.24s. 
-Token/sec: 22.95
-Average acceptance length: 1.606
-
-Generated 258 tokens in 11.24s. 
-Token/sec: 22.94
-Average acceptance length: 1.606
-
-Generated 258 tokens in 13.24s. 
-Token/sec: 19.49
-Average acceptance length: 1.367
-
-Generated 258 tokens in 11.97s. 
-Token/sec: 21.56
-Average acceptance length: 1.367
-
-Generated 257 tokens in 10.75s. 
-Token/sec: 23.91
-Average acceptance length: 1.856
-
-Generated 257 tokens in 11.96s. 
-Token/sec: 21.49
-Average acceptance length: 1.856
-
-Generated 257 tokens in 11.46s. 
-Token/sec: 22.42
 Average acceptance length: 1.520
-
-Generated 258 tokens in 11.44s. 
-Token/sec: 22.55
-Average acceptance length: 1.529
-
-Generated 257 tokens in 12.75s. 
-Token/sec: 20.15
-Average acceptance length: 1.520
-
-Generated 257 tokens in 11.43s. 
-Token/sec: 22.49
-Average acceptance length: 1.520
-
-Generated 257 tokens in 11.69s. 
-Token/sec: 21.99
-Average acceptance length: 1.425
-
-Generated 257 tokens in 13.03s. 
-Token/sec: 19.72
-Average acceptance length: 1.425
-
-Generated 258 tokens in 11.28s. 
-Token/sec: 22.88
-Average acceptance length: 1.580
-
-Generated 258 tokens in 11.28s. 
-Token/sec: 22.88
-Average acceptance length: 1.580
-
-Generated 259 tokens in 12.69s. 
-Token/sec: 20.41
-Average acceptance length: 1.564
-
-Generated 259 tokens in 11.48s. 
-Token/sec: 22.56
-Average acceptance length: 1.564
-
-Generated 257 tokens in 12.09s. 
-Token/sec: 21.26
-Average acceptance length: 1.793
-
-Generated 257 tokens in 10.84s. 
-Token/sec: 23.71
-Average acceptance length: 1.793
-Warming up GPUs...
-Traceback (most recent call last):
-  File "/home/hjkim/workspace/SpecExtend_Reb/exp_llama3_eagle3_128k_final.py", line 142, in <module>
-    _ = model.eagenerate(
-        ^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py", line 264, in eagenerate
-    draft_input_ids,draft_position_ids,tree_attention_mask,last_token,parent=self(input_ids, past_key_values=past_key_values, output_orig=True, nodes=nodes, threshold=threshold, max_depth=max_depth,logits_processor=logits_processor)
-                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py", line 184, in forward
-    input_ids,position_ids,tree_attention_mask,parent = self.ea_layer.topK_genrate(hidden_states, input_ids, self.base_model.lm_head, nodes=nodes,threshold=threshold,max_depth=max_depth)
-                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/cnets.py", line 842, in topK_genrate
-    next_token = torch.multinomial(probabilities, num_samples=1).view(1, -1)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: CUDA error: device-side assert triggered
-CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1
-Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
-
-Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.39it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.41it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.71it/s]
-/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py:109: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  ea_layer_state_dict = torch.load(load_model_path,
-Warming up GPUs...
-Warmup complete!
-len=65536:   0%|                                                                                   | 0/20 [00:00<?, ?it/s]W0703 18:57:51.279000 123554456864576 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
-W0703 18:57:51.279000 123554456864576 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
-W0703 18:57:51.279000 123554456864576 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
-W0703 18:57:51.279000 123554456864576 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
-W0703 18:57:51.279000 123554456864576 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
-len=65536:   5%|███▊                                                                       | 1/20 [00:25<08:11, 25.87s/it]len=65536:  10%|███████▌                                                                   | 2/20 [00:49<07:23, 24.62s/it]len=65536:  15%|███████████▎                                                               | 3/20 [01:13<06:54, 24.41s/it]len=65536:  20%|███████████████                                                            | 4/20 [01:37<06:25, 24.11s/it]len=65536:  25%|██████████████████▊                                                        | 5/20 [02:00<05:57, 23.84s/it]len=65536:  30%|██████████████████████▌                                                    | 6/20 [02:24<05:33, 23.81s/it]len=65536:  35%|██████████████████████████▎                                                | 7/20 [02:48<05:09, 23.84s/it]len=65536:  40%|██████████████████████████████                                             | 8/20 [03:12<04:47, 23.95s/it]len=65536:  45%|█████████████████████████████████▊                                         | 9/20 [03:36<04:23, 23.91s/it]len=65536:  50%|█████████████████████████████████████                                     | 10/20 [04:00<03:59, 23.90s/it]len=65536:  55%|████████████████████████████████████████▋                                 | 11/20 [04:25<03:37, 24.22s/it]len=65536:  60%|████████████████████████████████████████████▍                             | 12/20 [04:47<03:09, 23.72s/it]len=65536:  65%|████████████████████████████████████████████████                          | 13/20 [05:13<02:49, 24.19s/it]len=65536:  70%|███████████████████████████████████████████████████▊                      | 14/20 [05:35<02:22, 23.73s/it]len=65536:  75%|███████████████████████████████████████████████████████▌                  | 15/20 [06:00<01:59, 23.92s/it]len=65536:  80%|███████████████████████████████████████████████████████████▏              | 16/20 [06:23<01:34, 23.63s/it]len=65536:  85%|██████████████████████████████████████████████████████████████▉           | 17/20 [06:47<01:11, 23.99s/it]len=65536:  90%|██████████████████████████████████████████████████████████████████▌       | 18/20 [07:11<00:47, 23.99s/it]len=65536:  95%|██████████████████████████████████████████████████████████████████████▎   | 19/20 [07:34<00:23, 23.63s/it]len=65536: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:57<00:00, 23.41s/it]len=65536: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:57<00:00, 23.88s/it]
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [188,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
-
-Generated 258 tokens in 12.68s. 
-Token/sec: 20.35
-Average acceptance length: 1.481
-
-Generated 257 tokens in 13.12s. 
-Token/sec: 19.59
-Average acceptance length: 1.402
-
-Generated 257 tokens in 11.84s. 
-Token/sec: 21.71
-Average acceptance length: 1.380
-
-Generated 257 tokens in 11.83s. 
-Token/sec: 21.73
-Average acceptance length: 1.380
-
-Generated 258 tokens in 12.71s. 
-Token/sec: 20.29
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.38s. 
-Token/sec: 22.68
-Average acceptance length: 1.554
-
-Generated 261 tokens in 11.11s. 
-Token/sec: 23.49
-Average acceptance length: 1.691
-
-Generated 261 tokens in 12.45s. 
-Token/sec: 20.96
-Average acceptance length: 1.691
-
-Generated 257 tokens in 11.64s. 
-Token/sec: 22.08
-Average acceptance length: 1.448
-
-Generated 257 tokens in 11.64s. 
-Token/sec: 22.08
-Average acceptance length: 1.448
-
-Generated 259 tokens in 12.56s. 
-Token/sec: 20.63
-Average acceptance length: 1.670
-
-Generated 259 tokens in 11.11s. 
-Token/sec: 23.32
-Average acceptance length: 1.670
-
-Generated 257 tokens in 11.23s. 
-Token/sec: 22.9
-Average acceptance length: 1.596
-
-Generated 257 tokens in 12.57s. 
-Token/sec: 20.44
-Average acceptance length: 1.596
-
-Generated 258 tokens in 11.38s. 
-Token/sec: 22.67
-Average acceptance length: 1.554
-
-Generated 258 tokens in 12.72s. 
-Token/sec: 20.28
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.92s. 
-Token/sec: 21.65
-Average acceptance length: 1.389
-
-Generated 258 tokens in 11.83s. 
-Token/sec: 21.81
-Average acceptance length: 1.389
-
-Generated 258 tokens in 12.57s. 
-Token/sec: 20.52
-Average acceptance length: 1.606
-
-Generated 258 tokens in 11.22s. 
-Token/sec: 22.99
-Average acceptance length: 1.606
-
-Generated 257 tokens in 11.76s. 
-Token/sec: 21.85
-Average acceptance length: 1.402
-
-Generated 257 tokens in 13.09s. 
-Token/sec: 19.64
-Average acceptance length: 1.402
-
-Generated 258 tokens in 11.26s. 
-Token/sec: 22.92
-Average acceptance length: 1.606
-
-Generated 258 tokens in 11.26s. 
-Token/sec: 22.92
-Average acceptance length: 1.606
-
-Generated 258 tokens in 13.27s. 
-Token/sec: 19.44
-Average acceptance length: 1.367
-
-Generated 258 tokens in 11.91s. 
-Token/sec: 21.66
-Average acceptance length: 1.367
-
-Generated 257 tokens in 10.63s. 
-Token/sec: 24.19
-Average acceptance length: 1.856
-
-Generated 257 tokens in 11.96s. 
-Token/sec: 21.5
-Average acceptance length: 1.856
-
-Generated 257 tokens in 11.46s. 
-Token/sec: 22.42
-Average acceptance length: 1.520
-
-Generated 258 tokens in 12.82s. 
-Token/sec: 20.12
-Average acceptance length: 1.529
-
-Generated 257 tokens in 11.44s. 
-Token/sec: 22.47
-Average acceptance length: 1.520
-
-Generated 257 tokens in 11.43s. 
-Token/sec: 22.48
-Average acceptance length: 1.520
-
-Generated 257 tokens in 13.03s. 
-Token/sec: 19.72
-Average acceptance length: 1.425
-
-Generated 257 tokens in 11.69s. 
-Token/sec: 21.98
-Average acceptance length: 1.425
 
 Generated 258 tokens in 11.28s. 
 Token/sec: 22.87
-Average acceptance length: 1.580
+Average acceptance length: 1.633
 
 Generated 258 tokens in 12.62s. 
 Token/sec: 20.44
+Average acceptance length: 1.633
+
+Generated 258 tokens in 11.47s. 
+Token/sec: 22.5
 Average acceptance length: 1.580
 
-Generated 259 tokens in 11.36s. 
-Token/sec: 22.8
-Average acceptance length: 1.564
+Generated 261 tokens in 11.61s. 
+Token/sec: 22.48
+Average acceptance length: 1.559
 
-Generated 259 tokens in 11.35s. 
-Token/sec: 22.81
-Average acceptance length: 1.564
+Generated 259 tokens in 12.69s. 
+Token/sec: 20.42
+Average acceptance length: 1.616
 
-Generated 257 tokens in 12.07s. 
-Token/sec: 21.29
-Average acceptance length: 1.793
+Generated 259 tokens in 11.34s. 
+Token/sec: 22.84
+Average acceptance length: 1.616
 
-Generated 257 tokens in 10.74s. 
-Token/sec: 23.93
-Average acceptance length: 1.793
+Generated 259 tokens in 11.94s. 
+Token/sec: 21.69
+Average acceptance length: 1.398
+
+Generated 259 tokens in 13.30s. 
+Token/sec: 19.48
+Average acceptance length: 1.398
+
+Generated 257 tokens in 11.47s. 
+Token/sec: 22.41
+Average acceptance length: 1.596
+
+Generated 257 tokens in 12.88s. 
+Token/sec: 19.96
+Average acceptance length: 1.596
+
+Generated 259 tokens in 11.66s. 
+Token/sec: 22.21
+Average acceptance length: 1.515
+
+Generated 259 tokens in 11.66s. 
+Token/sec: 22.2
+Average acceptance length: 1.515
+
+Generated 260 tokens in 12.25s. 
+Token/sec: 21.23
+Average acceptance length: 1.857
+
+Generated 260 tokens in 10.88s. 
+Token/sec: 23.9
+Average acceptance length: 1.857
+
+Generated 260 tokens in 11.82s. 
+Token/sec: 21.99
+Average acceptance length: 1.524
+
+Generated 260 tokens in 13.02s. 
+Token/sec: 19.98
+Average acceptance length: 1.524
+
+Generated 259 tokens in 11.01s. 
+Token/sec: 23.53
+Average acceptance length: 1.755
+
+Generated 259 tokens in 11.02s. 
+Token/sec: 23.5
+Average acceptance length: 1.755
+
+Generated 258 tokens in 12.63s. 
+Token/sec: 20.42
+Average acceptance length: 1.633
+
+Generated 258 tokens in 11.30s. 
+Token/sec: 22.83
+Average acceptance length: 1.633
+
+Generated 258 tokens in 10.83s. 
+Token/sec: 23.83
+Average acceptance length: 1.835
+
+Generated 258 tokens in 12.01s. 
+Token/sec: 21.47
+Average acceptance length: 1.899
+
+Generated 257 tokens in 10.61s. 
+Token/sec: 24.22
+Average acceptance length: 1.920
+
+Generated 257 tokens in 10.60s. 
+Token/sec: 24.24
+Average acceptance length: 1.920
+
+Generated 257 tokens in 12.14s. 
+Token/sec: 21.17
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.78s. 
+Token/sec: 23.85
+Average acceptance length: 1.856
 Warming up GPUs...
 Traceback (most recent call last):
-  File "/home/hjkim/workspace/SpecExtend_Reb/exp_llama3_eagle3_128k_final.py", line 142, in <module>
+  File "/home/hjkim/workspace/SpecExtend_Reb/exp_llama3_eagle1_128k_final.py", line 143, in <module>
     _ = model.eagenerate(
         ^^^^^^^^^^^^^^^^^
   File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
     return func(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py", line 264, in eagenerate
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py", line 247, in eagenerate
     draft_input_ids,draft_position_ids,tree_attention_mask,last_token,parent=self(input_ids, past_key_values=past_key_values, output_orig=True, nodes=nodes, threshold=threshold, max_depth=max_depth,logits_processor=logits_processor)
                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
@@ -485,189 +315,595 @@ Traceback (most recent call last):
   File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py", line 184, in forward
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py", line 165, in forward
     input_ids,position_ids,tree_attention_mask,parent = self.ea_layer.topK_genrate(hidden_states, input_ids, self.base_model.lm_head, nodes=nodes,threshold=threshold,max_depth=max_depth)
                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
     return func(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hjkim/workspace/SpecExtend_Reb/eagle_3/cnets.py", line 842, in topK_genrate
-    next_token = torch.multinomial(probabilities, num_samples=1).view(1, -1)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/cnets.py", line 827, in topK_genrate
+    tree_output = tree.update(
+                  ^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/shared/opt_tree.py", line 82, in update
+    outputs=self.add(logits)
+            ^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/shared/opt_tree.py", line 51, in add
+    pvals = global_top_logits.tolist()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: CUDA error: device-side assert triggered
 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
-Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.40it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.42it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.98it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.72it/s]
-/home/hjkim/workspace/SpecExtend_Reb/eagle_3/model_eagle.py:109: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.40it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.42it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.71it/s]
+/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py:105: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
   ea_layer_state_dict = torch.load(load_model_path,
 Warming up GPUs...
 Warmup complete!
-len=131072:   0%|                                                                                  | 0/20 [00:00<?, ?it/s]W0703 19:06:21.516000 127141985470272 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
-W0703 19:06:21.516000 127141985470272 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
-W0703 19:06:21.516000 127141985470272 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
-W0703 19:06:21.516000 127141985470272 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
-W0703 19:06:21.516000 127141985470272 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
-len=131072:   5%|███▋                                                                      | 1/20 [00:25<08:13, 25.99s/it]len=131072:  10%|███████▍                                                                  | 2/20 [00:51<07:39, 25.54s/it]len=131072:  15%|███████████                                                               | 3/20 [01:14<06:53, 24.30s/it]len=131072:  20%|██████████████▊                                                           | 4/20 [01:37<06:24, 24.03s/it]len=131072:  25%|██████████████████▌                                                       | 5/20 [02:02<06:04, 24.27s/it]len=131072:  30%|██████████████████████▏                                                   | 6/20 [02:24<05:30, 23.59s/it]len=131072:  35%|█████████████████████████▉                                                | 7/20 [02:48<05:08, 23.70s/it]len=131072:  40%|█████████████████████████████▌                                            | 8/20 [03:12<04:46, 23.86s/it]len=131072:  45%|█████████████████████████████████▎                                        | 9/20 [03:36<04:21, 23.82s/it]len=131072:  50%|████████████████████████████████████▌                                    | 10/20 [04:00<03:58, 23.82s/it]len=131072:  55%|████████████████████████████████████████▏                                | 11/20 [04:25<03:37, 24.14s/it]len=131072:  60%|███████████████████████████████████████████▊                             | 12/20 [04:49<03:12, 24.06s/it]len=131072:  65%|███████████████████████████████████████████████▍                         | 13/20 [05:12<02:48, 24.01s/it]len=131072:  70%|███████████████████████████████████████████████████                      | 14/20 [05:35<02:21, 23.61s/it]len=131072:  75%|██████████████████████████████████████████████████████▊                  | 15/20 [05:59<01:59, 23.83s/it]len=131072:  80%|██████████████████████████████████████████████████████████▍              | 16/20 [06:22<01:34, 23.56s/it]len=131072:  85%|██████████████████████████████████████████████████████████████           | 17/20 [06:47<01:11, 23.95s/it]len=131072:  90%|█████████████████████████████████████████████████████████████████▋       | 18/20 [07:11<00:47, 23.96s/it]len=131072:  95%|█████████████████████████████████████████████████████████████████████▎   | 19/20 [07:35<00:24, 24.01s/it]len=131072: 100%|█████████████████████████████████████████████████████████████████████████| 20/20 [07:57<00:00, 23.27s/it]len=131072: 100%|█████████████████████████████████████████████████████████████████████████| 20/20 [07:57<00:00, 23.87s/it]
+len=65536:   0%|                                                                                   | 0/20 [00:00<?, ?it/s]W0703 19:45:38.143000 135747176650560 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
+W0703 19:45:38.143000 135747176650560 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
+W0703 19:45:38.143000 135747176650560 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
+W0703 19:45:38.143000 135747176650560 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0703 19:45:38.143000 135747176650560 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+len=65536:   5%|███▊                                                                       | 1/20 [00:25<08:08, 25.73s/it]len=65536:  10%|███████▌                                                                   | 2/20 [00:49<07:17, 24.29s/it]len=65536:  15%|███████████▎                                                               | 3/20 [01:12<06:47, 23.99s/it]len=65536:  20%|███████████████                                                            | 4/20 [01:35<06:16, 23.55s/it]len=65536:  25%|██████████████████▊                                                        | 5/20 [01:58<05:51, 23.45s/it]len=65536:  30%|██████████████████████▌                                                    | 6/20 [02:20<05:19, 22.85s/it]len=65536:  35%|██████████████████████████▎                                                | 7/20 [02:45<05:04, 23.42s/it]len=65536:  40%|██████████████████████████████                                             | 8/20 [03:08<04:42, 23.58s/it]len=65536:  45%|█████████████████████████████████▊                                         | 9/20 [03:32<04:17, 23.41s/it]len=65536:  50%|█████████████████████████████████████                                     | 10/20 [03:56<03:55, 23.59s/it]len=65536:  55%|████████████████████████████████████████▋                                 | 11/20 [04:21<03:36, 24.08s/it]len=65536:  60%|████████████████████████████████████████████▍                             | 12/20 [04:44<03:10, 23.77s/it]len=65536:  65%|████████████████████████████████████████████████                          | 13/20 [05:08<02:48, 24.03s/it]len=65536:  70%|███████████████████████████████████████████████████▊                      | 14/20 [05:32<02:22, 23.77s/it]len=65536:  75%|███████████████████████████████████████████████████████▌                  | 15/20 [05:56<02:00, 24.05s/it]len=65536:  80%|███████████████████████████████████████████████████████████▏              | 16/20 [06:18<01:33, 23.46s/it]len=65536:  85%|██████████████████████████████████████████████████████████████▉           | 17/20 [06:42<01:10, 23.62s/it]len=65536:  90%|██████████████████████████████████████████████████████████████████▌       | 18/20 [07:05<00:46, 23.41s/it]len=65536:  95%|██████████████████████████████████████████████████████████████████████▎   | 19/20 [07:27<00:22, 22.78s/it]len=65536: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:50<00:00, 22.84s/it]len=65536: 100%|██████████████████████████████████████████████████████████████████████████| 20/20 [07:50<00:00, 23.50s/it]
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [120,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
 
-Generated 258 tokens in 12.81s. 
-Token/sec: 20.14
-Average acceptance length: 1.481
-
-Generated 257 tokens in 13.10s. 
-Token/sec: 19.61
-Average acceptance length: 1.402
-
-Generated 257 tokens in 11.88s. 
-Token/sec: 21.64
-Average acceptance length: 1.380
-
-Generated 257 tokens in 13.24s. 
-Token/sec: 19.41
-Average acceptance length: 1.380
-
-Generated 258 tokens in 11.38s. 
-Token/sec: 22.68
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.37s. 
-Token/sec: 22.69
-Average acceptance length: 1.554
-
-Generated 261 tokens in 12.45s. 
-Token/sec: 20.96
-Average acceptance length: 1.691
-
-Generated 261 tokens in 11.10s. 
-Token/sec: 23.52
-Average acceptance length: 1.691
-
-Generated 257 tokens in 11.62s. 
-Token/sec: 22.11
-Average acceptance length: 1.448
-
-Generated 257 tokens in 12.99s. 
-Token/sec: 19.79
-Average acceptance length: 1.448
-
-Generated 259 tokens in 11.09s. 
-Token/sec: 23.36
-Average acceptance length: 1.670
-
-Generated 259 tokens in 11.09s. 
-Token/sec: 23.36
-Average acceptance length: 1.670
-
-Generated 257 tokens in 12.55s. 
-Token/sec: 20.48
-Average acceptance length: 1.596
-
-Generated 257 tokens in 11.28s. 
-Token/sec: 22.79
-Average acceptance length: 1.596
-
-Generated 258 tokens in 11.36s. 
-Token/sec: 22.71
-Average acceptance length: 1.554
-
-Generated 258 tokens in 12.75s. 
-Token/sec: 20.23
-Average acceptance length: 1.554
-
-Generated 258 tokens in 11.81s. 
-Token/sec: 21.85
-Average acceptance length: 1.389
-
-Generated 258 tokens in 11.81s. 
-Token/sec: 21.85
-Average acceptance length: 1.389
-
-Generated 258 tokens in 12.55s. 
-Token/sec: 20.55
-Average acceptance length: 1.606
-
-Generated 258 tokens in 11.20s. 
-Token/sec: 23.04
-Average acceptance length: 1.606
-
-Generated 257 tokens in 13.05s. 
-Token/sec: 19.7
-Average acceptance length: 1.402
-
-Generated 257 tokens in 11.72s. 
-Token/sec: 21.93
-Average acceptance length: 1.402
-
-Generated 258 tokens in 11.24s. 
-Token/sec: 22.96
-Average acceptance length: 1.606
-
-Generated 258 tokens in 12.57s. 
-Token/sec: 20.52
-Average acceptance length: 1.606
-
-Generated 258 tokens in 11.90s. 
-Token/sec: 21.69
-Average acceptance length: 1.367
-
-Generated 258 tokens in 11.90s. 
-Token/sec: 21.68
-Average acceptance length: 1.367
-
-Generated 257 tokens in 11.98s. 
-Token/sec: 21.46
-Average acceptance length: 1.856
-
-Generated 257 tokens in 10.61s. 
-Token/sec: 24.21
-Average acceptance length: 1.856
-
-Generated 257 tokens in 11.45s. 
-Token/sec: 22.44
-Average acceptance length: 1.520
-
-Generated 258 tokens in 12.80s. 
-Token/sec: 20.16
+Generated 258 tokens in 12.76s. 
+Token/sec: 20.21
 Average acceptance length: 1.529
 
-Generated 257 tokens in 11.42s. 
-Token/sec: 22.5
+Generated 258 tokens in 12.89s. 
+Token/sec: 20.02
+Average acceptance length: 1.529
+
+Generated 257 tokens in 11.60s. 
+Token/sec: 22.16
+Average acceptance length: 1.495
+
+Generated 257 tokens in 11.60s. 
+Token/sec: 22.16
+Average acceptance length: 1.495
+
+Generated 257 tokens in 12.45s. 
+Token/sec: 20.64
+Average acceptance length: 1.734
+
+Generated 257 tokens in 11.08s. 
+Token/sec: 23.19
+Average acceptance length: 1.734
+
+Generated 258 tokens in 12.07s. 
+Token/sec: 21.37
+Average acceptance length: 1.867
+
+Generated 258 tokens in 10.72s. 
+Token/sec: 24.06
+Average acceptance length: 1.867
+
+Generated 260 tokens in 10.93s. 
+Token/sec: 23.8
+Average acceptance length: 1.796
+
+Generated 260 tokens in 12.27s. 
+Token/sec: 21.19
+Average acceptance length: 1.796
+
+Generated 257 tokens in 10.80s. 
+Token/sec: 23.8
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.80s. 
+Token/sec: 23.79
+Average acceptance length: 1.856
+
+Generated 257 tokens in 12.93s. 
+Token/sec: 19.88
 Average acceptance length: 1.520
 
-Generated 257 tokens in 11.42s. 
-Token/sec: 22.5
+Generated 257 tokens in 11.57s. 
+Token/sec: 22.2
 Average acceptance length: 1.520
 
-Generated 257 tokens in 13.04s. 
-Token/sec: 19.71
-Average acceptance length: 1.425
+Generated 258 tokens in 11.24s. 
+Token/sec: 22.94
+Average acceptance length: 1.633
 
-Generated 257 tokens in 11.74s. 
-Token/sec: 21.9
-Average acceptance length: 1.425
+Generated 258 tokens in 12.59s. 
+Token/sec: 20.49
+Average acceptance length: 1.633
 
-Generated 258 tokens in 11.28s. 
-Token/sec: 22.87
+Generated 258 tokens in 11.41s. 
+Token/sec: 22.61
 Average acceptance length: 1.580
+
+Generated 261 tokens in 11.56s. 
+Token/sec: 22.58
+Average acceptance length: 1.559
+
+Generated 259 tokens in 12.63s. 
+Token/sec: 20.51
+Average acceptance length: 1.616
+
+Generated 259 tokens in 11.27s. 
+Token/sec: 22.97
+Average acceptance length: 1.616
+
+Generated 259 tokens in 11.87s. 
+Token/sec: 21.81
+Average acceptance length: 1.398
+
+Generated 259 tokens in 13.21s. 
+Token/sec: 19.6
+Average acceptance length: 1.398
+
+Generated 257 tokens in 11.57s. 
+Token/sec: 22.21
+Average acceptance length: 1.596
+
+Generated 257 tokens in 11.40s. 
+Token/sec: 22.55
+Average acceptance length: 1.596
+
+Generated 259 tokens in 12.96s. 
+Token/sec: 19.98
+Average acceptance length: 1.515
+
+Generated 259 tokens in 11.59s. 
+Token/sec: 22.35
+Average acceptance length: 1.515
+
+Generated 260 tokens in 12.23s. 
+Token/sec: 21.26
+Average acceptance length: 1.857
+
+Generated 260 tokens in 10.84s. 
+Token/sec: 23.98
+Average acceptance length: 1.857
+
+Generated 260 tokens in 11.64s. 
+Token/sec: 22.35
+Average acceptance length: 1.524
+
+Generated 260 tokens in 12.98s. 
+Token/sec: 20.02
+Average acceptance length: 1.524
+
+Generated 259 tokens in 11.00s. 
+Token/sec: 23.54
+Average acceptance length: 1.755
+
+Generated 259 tokens in 11.01s. 
+Token/sec: 23.53
+Average acceptance length: 1.755
 
 Generated 258 tokens in 12.63s. 
 Token/sec: 20.43
+Average acceptance length: 1.633
+
+Generated 258 tokens in 11.28s. 
+Token/sec: 22.87
+Average acceptance length: 1.633
+
+Generated 258 tokens in 10.82s. 
+Token/sec: 23.85
+Average acceptance length: 1.835
+
+Generated 258 tokens in 12.02s. 
+Token/sec: 21.47
+Average acceptance length: 1.899
+
+Generated 257 tokens in 10.60s. 
+Token/sec: 24.24
+Average acceptance length: 1.920
+
+Generated 257 tokens in 10.60s. 
+Token/sec: 24.24
+Average acceptance length: 1.920
+
+Generated 257 tokens in 12.12s. 
+Token/sec: 21.21
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.78s. 
+Token/sec: 23.85
+Average acceptance length: 1.856
+Warming up GPUs...
+Traceback (most recent call last):
+  File "/home/hjkim/workspace/SpecExtend_Reb/exp_llama3_eagle1_128k_final.py", line 143, in <module>
+    _ = model.eagenerate(
+        ^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py", line 247, in eagenerate
+    draft_input_ids,draft_position_ids,tree_attention_mask,last_token,parent=self(input_ids, past_key_values=past_key_values, output_orig=True, nodes=nodes, threshold=threshold, max_depth=max_depth,logits_processor=logits_processor)
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py", line 165, in forward
+    input_ids,position_ids,tree_attention_mask,parent = self.ea_layer.topK_genrate(hidden_states, input_ids, self.base_model.lm_head, nodes=nodes,threshold=threshold,max_depth=max_depth)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/spec-env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/eagle/cnets.py", line 827, in topK_genrate
+    tree_output = tree.update(
+                  ^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/shared/opt_tree.py", line 82, in update
+    outputs=self.add(logits)
+            ^^^^^^^^^^^^^^^^
+  File "/home/hjkim/workspace/SpecExtend_Reb/shared/opt_tree.py", line 51, in add
+    pvals = global_top_logits.tolist()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [121,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1284: indexSelectLargeIndex: block: [212,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+Loading checkpoint shards:   0%|                                                                    | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|███████████████                                             | 1/4 [00:00<00:02,  1.39it/s]Loading checkpoint shards:  50%|██████████████████████████████                              | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|█████████████████████████████████████████████               | 3/4 [00:02<00:00,  1.41it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████| 4/4 [00:02<00:00,  1.71it/s]
+/home/hjkim/workspace/SpecExtend_Reb/eagle/model_eagle.py:105: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ea_layer_state_dict = torch.load(load_model_path,
+Warming up GPUs...
+Warmup complete!
+len=131072:   0%|                                                                                  | 0/20 [00:00<?, ?it/s]W0703 19:53:59.694000 135177040246592 torch/_dynamo/convert_frame.py:762] [0/8] torch._dynamo hit config.cache_size_limit (8)
+W0703 19:53:59.694000 135177040246592 torch/_dynamo/convert_frame.py:762] [0/8]    function: 'tree_part_fwd_target' (/home/hjkim/workspace/SpecExtend_Reb/shared/triton_tree_attn.py:6)
+W0703 19:53:59.694000 135177040246592 torch/_dynamo/convert_frame.py:762] [0/8]    last reason: tensor 'L['tree_mask']' stride mismatch at index 0. expected 1675044, actual 1675911
+W0703 19:53:59.694000 135177040246592 torch/_dynamo/convert_frame.py:762] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0703 19:53:59.694000 135177040246592 torch/_dynamo/convert_frame.py:762] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+len=131072:   5%|███▋                                                                      | 1/20 [00:25<08:06, 25.63s/it]len=131072:  10%|███████▍                                                                  | 2/20 [00:48<07:15, 24.21s/it]len=131072:  15%|███████████                                                               | 3/20 [01:12<06:46, 23.92s/it]len=131072:  20%|██████████████▊                                                           | 4/20 [01:35<06:16, 23.51s/it]len=131072:  25%|██████████████████▌                                                       | 5/20 [01:57<05:44, 22.94s/it]len=131072:  30%|██████████████████████▏                                                   | 6/20 [02:20<05:21, 22.97s/it]len=131072:  35%|█████████████████████████▉                                                | 7/20 [02:44<05:05, 23.49s/it]len=131072:  40%|█████████████████████████████▌                                            | 8/20 [03:07<04:38, 23.21s/it]len=131072:  45%|█████████████████████████████████▎                                        | 9/20 [03:31<04:19, 23.59s/it]len=131072:  50%|████████████████████████████████████▌                                    | 10/20 [03:55<03:57, 23.74s/it]len=131072:  55%|████████████████████████████████████████▏                                | 11/20 [04:21<03:37, 24.20s/it]len=131072:  60%|███████████████████████████████████████████▊                             | 12/20 [04:44<03:10, 23.82s/it]len=131072:  65%|███████████████████████████████████████████████▍                         | 13/20 [05:08<02:48, 24.08s/it]len=131072:  70%|███████████████████████████████████████████████████                      | 14/20 [05:31<02:22, 23.80s/it]len=131072:  75%|██████████████████████████████████████████████████████▊                  | 15/20 [05:55<01:58, 23.72s/it]len=131072:  80%|██████████████████████████████████████████████████████████▍              | 16/20 [06:18<01:34, 23.64s/it]len=131072:  85%|██████████████████████████████████████████████████████████████           | 17/20 [06:42<01:11, 23.75s/it]len=131072:  90%|█████████████████████████████████████████████████████████████████▋       | 18/20 [07:05<00:47, 23.50s/it]len=131072:  95%|█████████████████████████████████████████████████████████████████████▎   | 19/20 [07:27<00:22, 22.85s/it]len=131072: 100%|█████████████████████████████████████████████████████████████████████████| 20/20 [07:50<00:00, 22.92s/it]len=131072: 100%|█████████████████████████████████████████████████████████████████████████| 20/20 [07:50<00:00, 23.52s/it]
+
+Generated 258 tokens in 12.70s. 
+Token/sec: 20.32
+Average acceptance length: 1.529
+
+Generated 258 tokens in 12.85s. 
+Token/sec: 20.08
+Average acceptance length: 1.529
+
+Generated 257 tokens in 11.57s. 
+Token/sec: 22.22
+Average acceptance length: 1.495
+
+Generated 257 tokens in 11.57s. 
+Token/sec: 22.21
+Average acceptance length: 1.495
+
+Generated 257 tokens in 12.42s. 
+Token/sec: 20.69
+Average acceptance length: 1.734
+
+Generated 257 tokens in 11.09s. 
+Token/sec: 23.18
+Average acceptance length: 1.734
+
+Generated 258 tokens in 10.73s. 
+Token/sec: 24.05
+Average acceptance length: 1.867
+
+Generated 258 tokens in 12.08s. 
+Token/sec: 21.35
+Average acceptance length: 1.867
+
+Generated 260 tokens in 10.92s. 
+Token/sec: 23.8
+Average acceptance length: 1.796
+
+Generated 260 tokens in 10.92s. 
+Token/sec: 23.8
+Average acceptance length: 1.796
+
+Generated 257 tokens in 12.15s. 
+Token/sec: 21.15
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.81s. 
+Token/sec: 23.78
+Average acceptance length: 1.856
+
+Generated 257 tokens in 11.57s. 
+Token/sec: 22.2
+Average acceptance length: 1.520
+
+Generated 257 tokens in 12.91s. 
+Token/sec: 19.91
+Average acceptance length: 1.520
+
+Generated 258 tokens in 11.26s. 
+Token/sec: 22.92
+Average acceptance length: 1.633
+
+Generated 258 tokens in 11.25s. 
+Token/sec: 22.93
+Average acceptance length: 1.633
+
+Generated 258 tokens in 12.79s. 
+Token/sec: 20.18
 Average acceptance length: 1.580
 
-Generated 259 tokens in 11.34s. 
-Token/sec: 22.84
-Average acceptance length: 1.564
+Generated 261 tokens in 11.58s. 
+Token/sec: 22.54
+Average acceptance length: 1.559
 
-Generated 259 tokens in 12.70s. 
-Token/sec: 20.4
-Average acceptance length: 1.564
+Generated 259 tokens in 12.67s. 
+Token/sec: 20.45
+Average acceptance length: 1.616
 
-Generated 257 tokens in 10.73s. 
-Token/sec: 23.96
-Average acceptance length: 1.793
+Generated 259 tokens in 11.31s. 
+Token/sec: 22.89
+Average acceptance length: 1.616
 
-Generated 257 tokens in 10.73s. 
-Token/sec: 23.95
-Average acceptance length: 1.793
+Generated 259 tokens in 11.91s. 
+Token/sec: 21.75
+Average acceptance length: 1.398
+
+Generated 259 tokens in 13.26s. 
+Token/sec: 19.54
+Average acceptance length: 1.398
+
+Generated 257 tokens in 11.43s. 
+Token/sec: 22.49
+Average acceptance length: 1.596
+
+Generated 257 tokens in 11.43s. 
+Token/sec: 22.48
+Average acceptance length: 1.596
+
+Generated 259 tokens in 12.97s. 
+Token/sec: 19.97
+Average acceptance length: 1.515
+
+Generated 259 tokens in 11.62s. 
+Token/sec: 22.28
+Average acceptance length: 1.515
+
+Generated 260 tokens in 10.87s. 
+Token/sec: 23.93
+Average acceptance length: 1.857
+
+Generated 260 tokens in 12.22s. 
+Token/sec: 21.28
+Average acceptance length: 1.857
+
+Generated 260 tokens in 11.71s. 
+Token/sec: 22.2
+Average acceptance length: 1.524
+
+Generated 260 tokens in 11.71s. 
+Token/sec: 22.2
+Average acceptance length: 1.524
+
+Generated 259 tokens in 12.37s. 
+Token/sec: 20.93
+Average acceptance length: 1.755
+
+Generated 259 tokens in 11.01s. 
+Token/sec: 23.52
+Average acceptance length: 1.755
+
+Generated 258 tokens in 11.29s. 
+Token/sec: 22.86
+Average acceptance length: 1.633
+
+Generated 258 tokens in 12.63s. 
+Token/sec: 20.42
+Average acceptance length: 1.633
+
+Generated 258 tokens in 10.83s. 
+Token/sec: 23.83
+Average acceptance length: 1.835
+
+Generated 258 tokens in 12.01s. 
+Token/sec: 21.48
+Average acceptance length: 1.899
+
+Generated 257 tokens in 10.61s. 
+Token/sec: 24.22
+Average acceptance length: 1.920
+
+Generated 257 tokens in 10.64s. 
+Token/sec: 24.15
+Average acceptance length: 1.920
+
+Generated 257 tokens in 12.20s. 
+Token/sec: 21.06
+Average acceptance length: 1.856
+
+Generated 257 tokens in 10.79s. 
+Token/sec: 23.81
+Average acceptance length: 1.856
 Experiment complete!
