@@ -12,19 +12,12 @@
     }
   },
   "results": {
-    "2048": {
-      "avg_accept_length": 1.5,
-      "tokens_per_sec": 74.696,
-      "total_generated": 10338,
-      "total_inference_time": 138.401,
-      "num_runs": 40
-    },
-    "4096": {
-      "avg_accept_length": 1.621,
-      "tokens_per_sec": 64.539,
-      "total_generated": 3097,
-      "total_inference_time": 47.987,
-      "num_runs": 12
+    "16384": {
+      "avg_accept_length": 1.431,
+      "tokens_per_sec": 35.349,
+      "total_generated": 516,
+      "total_inference_time": 14.597,
+      "num_runs": 2
     }
   }
 }
