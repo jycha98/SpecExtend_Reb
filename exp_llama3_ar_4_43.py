@@ -109,7 +109,6 @@ for length in lengths:
 
             # --- new: decode and print per‐run results ---
             output_text = tokenizer.decode(generated[0], skip_special_tokens=True)
-            print(colored(f"\nGenerated text:\n{output_text}", "yellow"))
             print(colored(f"Run {run+1} tokens/sec: {tps:.2f}\n", "yellow"))
             # --------------------------------------------
 
