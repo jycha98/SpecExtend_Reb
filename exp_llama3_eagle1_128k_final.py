@@ -154,7 +154,7 @@ for length in sorted_lengths[args.start_length_id:]:
             )
     print(colored("Warmup complete!", "yellow"))
 
-    for rec in tqdm(records, desc=f"len={length}"):
+    for rec in tqdm(records[:5], desc=f"len={length}"):
         for _ in range(2):
             input_ids = tokenizer.encode(rec["text"], return_tensors="pt", add_special_tokens=True)
             input_ids = input_ids.to(accelerator.device)
