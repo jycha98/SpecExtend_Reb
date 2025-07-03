@@ -3,30 +3,10 @@
     "dataset_name": "govreport"
   },
   "results": {
-    "1024": {
-      "mean_tokens_per_sec": 53.18331658968818,
-      "mean_time_per_run": 4.868902528285981,
-      "num_runs": 40
-    },
-    "2048": {
-      "mean_tokens_per_sec": 49.142808209798346,
-      "mean_time_per_run": 5.253485488891601,
-      "num_runs": 40
-    },
-    "4096": {
-      "mean_tokens_per_sec": 41.1771075584845,
-      "mean_time_per_run": 6.258939570188522,
-      "num_runs": 40
-    },
-    "8192": {
-      "mean_tokens_per_sec": 32.15006778178899,
-      "mean_time_per_run": 8.000685399770736,
-      "num_runs": 40
-    },
-    "16384": {
-      "mean_tokens_per_sec": 22.635180304342953,
-      "mean_time_per_run": 11.346650457382202,
-      "num_runs": 40
+    "32768": {
+      "mean_tokens_per_sec": 11.112075706477384,
+      "mean_time_per_run": 23.056077520052593,
+      "num_runs": 6
     }
   }
 }

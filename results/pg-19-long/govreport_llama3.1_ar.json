@@ -1,0 +1,12 @@
+{
+  "exp_config": {
+    "dataset_name": "govreport"
+  },
+  "results": {
+    "1024": {
+      "mean_tokens_per_sec": 55.0273900769813,
+      "mean_time_per_run": 4.652956406275432,
+      "num_runs": 6
+    }
+  }
+}
