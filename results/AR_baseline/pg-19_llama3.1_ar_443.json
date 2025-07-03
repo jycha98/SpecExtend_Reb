@@ -1,0 +1,32 @@
+{
+  "exp_config": {
+    "dataset_name": "pg-19"
+  },
+  "results": {
+    "1024": {
+      "mean_tokens_per_sec": 53.23990830332966,
+      "mean_time_per_run": 4.84792138338089,
+      "num_runs": 40
+    },
+    "2048": {
+      "mean_tokens_per_sec": 48.92186771666148,
+      "mean_time_per_run": 5.2706788897514345,
+      "num_runs": 40
+    },
+    "4096": {
+      "mean_tokens_per_sec": 41.18693469363408,
+      "mean_time_per_run": 6.252559691667557,
+      "num_runs": 40
+    },
+    "8192": {
+      "mean_tokens_per_sec": 31.472402843270856,
+      "mean_time_per_run": 8.173298972845078,
+      "num_runs": 40
+    },
+    "16000": {
+      "mean_tokens_per_sec": 23.156838296084015,
+      "mean_time_per_run": 11.099188202619553,
+      "num_runs": 40
+    }
+  }
+}
